@@ -9,4 +9,15 @@
    License: GPLv3
   */
 
+# add to stylesheet, add script, use element with shortcode
+
+
+function LiteYouTube($type) {
+    extract(shortcode_atts(array(
+        'link' => 'link'
+    	), $link));
+    return '<a href="' . esc_attr($link) . '">YouTube Link</a>';
+    }
+add_shortcode('litetube', 'LiteYouTube');
+
   ?>
