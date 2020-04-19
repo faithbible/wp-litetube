@@ -12,11 +12,12 @@
 # add to stylesheet, add script, use element with shortcode
 
 
-function LiteYouTube($type) {
-    extract(shortcode_atts(array(
-        'link' => 'link'
-    	), $link));
-    return '<a href="' . esc_attr($link) . '">YouTube Link</a>';
+function LiteYouTube( $atts ) {
+    $lt = shortcode_atts(array(
+       'id' => 'MFHVBUNGXzI',
+       'img' => 'https://placeimg.com/1024/576/nature'
+    	), $atts);
+    return '<lite-youtube videoid="' . $a['id'] . '" style="background-image: url(' . $a['img'] . ');"><div class="lty-playbtn"></div></lite-youtube>';
     }
 add_shortcode('litetube', 'LiteYouTube');
 
